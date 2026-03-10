@@ -1,0 +1,21 @@
+{%load static%}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=devide-width, initial-scale=1.0">
+        <title>SindApp - Gerenciando Associados com Tecnologia</title>
+        <link rel="stylesheet" href="{% static 'styles/style.css'%}">
+    </head>
+    <body>
+        {% include 'associado/partials/_menu.html'%}
+
+        <main>
+            {% block content%}
+            {% endblock %}
+        </main>
+
+        {% include 'associado/partials/_footer.html'%}
+    </body>
+</html>

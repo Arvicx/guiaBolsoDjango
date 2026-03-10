@@ -1,14 +1,42 @@
-{%load static%}
+{% extends 'associado/base.html' %}
 
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=devide-width, initial-scale=1.0">
-        <title>SindApp - Gerenciando Associados com Tecnologia</title>
-        <link rel="stylesheet" href="{% static 'css/style.css'%}">
-    </head>
-    <body>
-        <img src="{% static 'assets/logo_recortada.png'%}" alt="Logo SindApp">
-    </body>
-</html>
+{% block content %}
+
+<main class="container-dashboard">
+    <header class="header-interna">
+        <h1>Painel Administrativo</h1>
+        <p>Bem-vindo ao sistema de gestão do SindApp.</p>
+    </header>
+
+    <div class="cards-grid">
+        <div class="card-status azul">
+            <h3>1.240</h3>
+            <p>Sócios Ativos</p>
+        </div>
+        <div class="card-status verde">
+            <h3>45</h3>
+            <p>Novas Adesões</p>
+        </div>
+        <div class="card-status laranja">
+            <h3>12</h3>
+            <p>Pendentes</p>
+        </div>
+    </div>
+
+    <section class="acoes-usuario">
+        {% include 'associado/partials/_busca.html' %}
+        <button class="btn-novo">+ Novo Sócio</button>
+    </section>
+
+    <section class="tabela-socios">
+        <h2>Últimos Associados Atualizados</h2>
+        <div class="linha-socio">
+            <span>ID: #001</span>
+            <strong>Ricardo Oliveira</strong>
+            <span class="badge ativo">Ativo</span>
+            <a href="{% url 'perfil' %}" class="btn-link">Ver Perfil</a>
+        </div>
+    </section>
+</main>
+
+{% endblock %}
